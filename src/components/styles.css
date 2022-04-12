@@ -1,6 +1,182 @@
+.headline {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+.student_list {
+  text-align: start;
+}
+body {
+  background-color: #f3f3f3;
+  text-align: center;
+  overflow-y: scroll;
+}
+.components_div {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 5px;
+  background-color: white;
+}
+.result_div {
+  width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 5px;
+}
+.tablehead {
+  background-color: rgb(200, 238, 254);
+  height: 50px;
+}
+.col_name {
+  width: 20%;
+  border: 1px solid gray;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.th_text {
+  padding: 0.1em;
+}
+table {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  font-weight: 500;
+}
+td {
+  border: 1px solid gray;
+  padding: 5px;
+}
+tr {
+  height: 50px;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.college_color,
+.result_college_color {
+  height: 2em;
+  border-radius: 20px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding-top: 8px;
+  width: 10rem;
+}
+.add_result_button {
+  background-color: rgb(56, 56, 109);
+  border: none;
+  margin-left: 20px;
+  width: 8rem;
+  color: white;
+  height: 3em;
+  border-radius: 5px;
+}
+.add_show_btn_div {
+  width: 20rem;
+  padding: 1em;
+  border-radius: 5px;
+  background-color: white;
+}
+.addnew_div {
+  background-color: rgb(230, 230, 230);
+  position: absolute;
+  z-index: 9;
+  border-radius: 5px;
+  padding-left: 0.5em;
+  width: 500px;
+  height: 500px;
+  top: 60px;
+}
 .add_row {
-  z-index: 10;
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  color: rgb(144, 144, 144);
+  gap: 0.5em;
+  column-gap: 0;
+  text-align: start;
+}
+.add_new_heading {
+  text-align: start;
+  margin-left: 0em;
+  color: white;
+  background-color: rgb(103, 103, 155);
+  padding: 0.5em;
+  font-weight: 400;
+}
+
+.save_btn {
+  border: none;
+  background-color: rgb(98, 172, 98);
+  color: white;
+  width: 40%;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 30px;
+}
+.cancel_btn {
+  background-color: rgb(182, 216, 230);
+  width: 40%;
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 30px;
+  border: 1px solid rgb(123, 138, 145);
+}
+.btn_div {
   display: flex;
-  flex-direction: column;
-  width: 12em;
+  margin: auto;
+  margin-left: 15px;
+  margin-top: 8em;
+}
+label {
+  background-color: rgb(183, 227, 244);
+  padding: 10px;
+  border-radius: 5px 0px 0px 5px;
+  width: 15rem;
+}
+
+input,
+select {
+  border: none;
+  height: 40px;
+}
+.edit_input {
+  border: 1px solid gray;
+  width: 95%;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.loader {
+  border: 5px solid rgb(243, 243, 243);
+  border-top: 5px solid rgb(52, 152, 219);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+.loader_td {
+  padding-left: 6.5em;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top: 5px solid rgb(203, 206, 208);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

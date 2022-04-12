@@ -1,32 +1,68 @@
 import React from "react";
-
-const ReadOnlyRow = ({ student, bgColor }) => {
+const ReadOnlyRow = ({ student, bgColor, handleEdit, setEdit }) => {
   return (
     <tr>
-      <td>{student.name}</td>
-      <td>{student.rank}</td>
       <td
-        style={{
-          backgroundColor: bgColor(student.college_pref_1),
+        onClick={(e) => {
+          setEdit(student.id);
+          handleEdit(e, student);
         }}
       >
-        {student.college_pref_1}
+        {student.name}
       </td>
       <td
-        style={{
-          backgroundColor: bgColor(student.college_pref_2),
+        onClick={(e) => {
+          setEdit(student.id);
+          handleEdit(e, student);
         }}
       >
-        {student.college_pref_2}
+        {student.rank}
       </td>
       <td
-        style={{
-          backgroundColor: bgColor(student.college_pref_3),
+        onClick={(e) => {
+          setEdit(student.id);
+          handleEdit(e, student);
         }}
       >
-        {student.college_pref_3}
+        <div
+          className="college_color"
+          style={{
+            backgroundColor: bgColor(student.college_pref_1),
+          }}
+        >
+          {student.college_pref_1}
+        </div>
       </td>
-      <td></td>
+      <td
+        onClick={(e) => {
+          setEdit(student.id);
+          handleEdit(e, student);
+        }}
+      >
+        <div
+          className="college_color"
+          style={{
+            backgroundColor: bgColor(student.college_pref_2),
+          }}
+        >
+          {student.college_pref_2}
+        </div>
+      </td>
+      <td
+        onClick={(e) => {
+          setEdit(student.id);
+          handleEdit(e, student);
+        }}
+      >
+        <div
+          className="college_color"
+          style={{
+            backgroundColor: bgColor(student.college_pref_3),
+          }}
+        >
+          {student.college_pref_3}
+        </div>
+      </td>
     </tr>
   );
 };
