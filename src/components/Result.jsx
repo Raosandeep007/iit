@@ -9,7 +9,7 @@ const Result = ({
   RiArrowDropDownLine,
   FaHashtag,
 }) => {
-  const [result, setResult] = useState(() => allotment(students, colleges));
+  const result = allotment(students, colleges);
 
   return (
     <div className="result_div">
