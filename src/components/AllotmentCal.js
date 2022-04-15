@@ -38,6 +38,12 @@ export default function allotment(students, colleges) {
       college_allotment.rank = student.rank;
       college_allotment.id = Math.random();
       college_allotment_list.push(college_allotment);
+    } else {
+      college_allotment.name = student.name;
+      college_allotment.college = "Not Alloted";
+      college_allotment.rank = student.rank;
+      college_allotment.id = Math.random();
+      college_allotment_list.push(college_allotment);
     }
   }
   return college_allotment_list;
