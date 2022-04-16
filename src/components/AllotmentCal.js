@@ -1,6 +1,7 @@
 export default function allotment(students, colleges) {
   const studentsCopy = JSON.parse(JSON.stringify(students));
   const collegesCopy = JSON.parse(JSON.stringify(colleges));
+  studentsCopy.sort((a, b) => a.rank - b.rank);
   let college_allotment_list = [];
   for (let i = 0; i < studentsCopy.length; i++) {
     let student = studentsCopy[i];

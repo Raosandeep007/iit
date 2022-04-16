@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import allotment from "./AllotmentCal";
 const Result = ({
   students,
@@ -9,7 +9,10 @@ const Result = ({
   RiArrowDropDownLine,
   FaHashtag,
 }) => {
-  const result = allotment(students, colleges);
+  const [result, setResult] = useState([]);
+  useEffect(() => {
+    setResult(allotment(students, colleges));
+  }, []);
 
   return (
     <div className="result_div">
