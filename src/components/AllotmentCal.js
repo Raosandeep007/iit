@@ -9,13 +9,23 @@ export default function allotment(students, colleges) {
     let college_pref_1_index = collegesCopy.findIndex(
       (college) => college.name === student.college_pref_1
     );
-    let college_pref_2_index = collegesCopy.findIndex(
-      (college) => college.name === student.college_pref_2
-    );
-    let college_pref_3_index = collegesCopy.findIndex(
-      (college) => college.name === student.college_pref_3
-    );
+    let college_pref_2_index;
+    let college_pref_3_index;
+    if (collegesCopy[college_pref_1_index].noOfSeats === 0) {
+      college_pref_2_index = collegesCopy.findIndex(
+        (college) => college.name === student.college_pref_2
+      );
+    }
+    if (
+      collegesCopy[college_pref_1_index].noOfSeats === 0 &&
+      collegesCopy[college_pref_2_index].noOfSeats === 0
+    ) {
+      college_pref_3_index = collegesCopy.findIndex(
+        (college) => college.name === student.college_pref_3
+      );
+    }
     if (collegesCopy[college_pref_1_index].noOfSeats > 0) {
+      console.log("1");
       collegesCopy[college_pref_1_index].noOfSeats =
         collegesCopy[college_pref_1_index].noOfSeats - 1;
       college_allotment.name = student.name;
@@ -24,6 +34,7 @@ export default function allotment(students, colleges) {
       college_allotment.id = Math.random();
       college_allotment_list.push(college_allotment);
     } else if (collegesCopy[college_pref_2_index].noOfSeats > 0) {
+      console.log("2");
       collegesCopy[college_pref_2_index].noOfSeats =
         collegesCopy[college_pref_2_index].noOfSeats - 1;
       college_allotment.name = student.name;
@@ -32,6 +43,7 @@ export default function allotment(students, colleges) {
       college_allotment.id = Math.random();
       college_allotment_list.push(college_allotment);
     } else if (collegesCopy[college_pref_3_index].noOfSeats > 0) {
+      console.log("3");
       collegesCopy[college_pref_3_index].noOfSeats =
         collegesCopy[college_pref_3_index].noOfSeats - 1;
       college_allotment.name = student.name;
@@ -40,6 +52,7 @@ export default function allotment(students, colleges) {
       college_allotment.id = Math.random();
       college_allotment_list.push(college_allotment);
     } else {
+      console.log("4");
       college_allotment.name = student.name;
       college_allotment.college = "Not Alloted";
       college_allotment.rank = student.rank;
